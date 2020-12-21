@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,8 +15,8 @@ public class Ticket implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     int id;
     
-    @OneToOne
-    Persona newDuenio;
+    @ManyToOne
+    Cliente newDuenio;
     
     @OneToOne
     Juego newJuego;
@@ -26,9 +27,9 @@ public class Ticket implements Serializable {
     public Ticket() {
     }
 
-    public Ticket(int id, Persona newDueño, Juego newJuego, Horario newHorario) {
+    public Ticket(int id, Cliente newDuenio, Juego newJuego, Horario newHorario) {
         this.id = id;
-        this.newDuenio = newDueño;
+        this.newDuenio = newDuenio;
         this.newJuego = newJuego;
         this.newHorario = newHorario;
     }
@@ -41,11 +42,11 @@ public class Ticket implements Serializable {
         this.id = id;
     }
 
-    public Persona getNewDuenio() {
+    public Cliente getNewDuenio() {
         return newDuenio;
     }
 
-    public void setNewDuenio(Persona newDuenio) {
+    public void setNewDuenio(Cliente newDuenio) {
         this.newDuenio = newDuenio;
     }
 
@@ -65,6 +66,7 @@ public class Ticket implements Serializable {
         this.newHorario = newHorario;
     }
 
+    
     @Override
     public String toString() {
         return "Ticket{" + "id= " + id + ", Propietario= " + newDuenio + ", Juego= " + newJuego + ", Horario= " + newHorario + '}';

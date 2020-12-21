@@ -17,17 +17,16 @@ public class TicketJpaController implements Serializable {
     public TicketJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+    
+    public TicketJpaController() {
+        emf = Persistence.createEntityManagerFactory("TPFinal_webPU");
+    }
+    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
-    }
-
-    public TicketJpaController() {
-        emf = Persistence.createEntityManagerFactory("TPfina_lPU");
-    }
-    
-    
+    }   
 
     public void create(Ticket ticket) {
         EntityManager em = null;

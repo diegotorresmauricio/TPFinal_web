@@ -17,17 +17,16 @@ public class JuegoJpaController implements Serializable {
     public JuegoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+    
+     public JuegoJpaController() {
+        emf = Persistence.createEntityManagerFactory("TPFinal_webPU");
+    }
+     
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-
-    public JuegoJpaController() {
-        emf = Persistence.createEntityManagerFactory("TPfina_lPU");
-    }
-    
-    
 
     public void create(Juego juego) {
         EntityManager em = null;

@@ -6,13 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-@Entity
+@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 public class Persona implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    int id;
+    String dni;
     
     @Basic
     String nombre;
@@ -21,18 +22,18 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido) {
-        this.id = id;
+    public Persona(String dni, String nombre, String apellido) {
+        this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public int getId() {
-        return id;
+    public String getDni() {
+        return dni;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getNombre() {
@@ -50,7 +51,6 @@ public class Persona implements Serializable {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
-    
+
     
 }

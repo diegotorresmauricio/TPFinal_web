@@ -1,78 +1,79 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro</title>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
-    </head>
-    <body>
-        <body>
+<html lang="es">
 
-            <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                <div class="signup-form-container">
-    
-                    <!-- form start -->
-                <form action="RegistoServlet" role="form" id="register-form" autocomplete="off">
-         
-                <div class="form-header">
-                    <h3 class="form-title"><i class="fa fa-user"></i> Sign Up</h3>
-                      
-                <div class="pull-right">
-                    <h3 class="form-title"><span class="glyphicon glyphicon-pencil"></span></h3>
-                </div>
-                      
-                </div>
-         
-                <div class="form-body">
-                      
-                <div class="form-group">
-                   <div class="input-group">
-                   <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-                   <input name="name" type="text" class="form-control" placeholder="Nombre de usuario">
-                   </div>
-                   <span class="help-block" id="error"></span>
-                </div>
-                        
-                <div class="row">
-                        
-                   <div class="form-group col-lg-6">
+    <title>Registro de usuarios</title>
+
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <link href="css/Registro.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registro de usuarios</h2>
+                    <form action="RegistroServlet" method="POST">
+                        <div class="row row-space">
                         <div class="input-group">
-                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                        <input name="password" id="password" type="password" class="form-control" placeholder="Contraseña">
-                        </div>  
-                        <span class="help-block" id="error"></span>                    
-                   </div>
-                            
-                   <div class="form-group col-lg-6">
+                            <input class="input--style-1" type="text" placeholder="DNI" name="dni">
+                        </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="Nombre" name="nombre">
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="Apellido" name="apellido">
+                                </div>
+                            </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Cargo" name="cargo">
+                        </div>
+                        </div>
+                        <div class="col-2">
                         <div class="input-group">
-                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
-                        <input name="cpassword" type="password" class="form-control" placeholder="Reingrese contraseña">
-                        </div>  
-                        <span class="help-block" id="error"></span>                    
-                   </div>
-                            
-             </div>
-                        
-                        
+                            <input class="input--style-1" type="text" placeholder="Usuario" name="usuario">
+                        </div>
+                        </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="Contraseña" name="pass">
+                                </div>
+                            </div>
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            
-            <div class="form-footer">
-                 <button type="submit" class="btn btn-info">
-                 <span class="glyphicon glyphicon-log-in"></span> Sign Me Up !
-                 </button>
-            </div>
-
-
-            </form>
-            
-           </div>
-
         </div>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/jquery-1.11.2.min.js"></script>
-<script src="assets/jquery.validate.min.js"></script>
-        
-        </body>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <script src="js/global.js"></script>
+
+</body>
 </html>

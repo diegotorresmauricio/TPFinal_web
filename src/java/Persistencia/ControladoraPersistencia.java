@@ -1,5 +1,6 @@
 package Persistencia;
 
+import Logica.Cliente;
 import Logica.Empleado;
 import Logica.Horario;
 import Logica.Juego;
@@ -14,6 +15,12 @@ import java.util.logging.Logger;
 public class ControladoraPersistencia {
 
     EmpleadoJpaController empleJPA = new EmpleadoJpaController();
+    HorarioJpaController horarioJPA = new HorarioJpaController ();
+    JuegoJpaController juegoJPA = new JuegoJpaController ();
+    ClienteJpaController clienteJPA = new ClienteJpaController ();
+    TicketJpaController ticketJPA = new TicketJpaController();
+    UsuarioJpaController usuJPA = new UsuarioJpaController();
+    
     public void crearEmpleado (Empleado emple) {
         try {
             empleJPA.create(emple);
@@ -48,8 +55,6 @@ public class ControladoraPersistencia {
         return emple;
     }
     
-    
-    HorarioJpaController horarioJPA = new HorarioJpaController ();
     public void crearHorario (Horario hora) {
         try {
             horarioJPA.create(hora);
@@ -87,7 +92,6 @@ public class ControladoraPersistencia {
     }
     
     
-    JuegoJpaController juegoJPA = new JuegoJpaController ();
     public void crearJuego (Juego jue) {
         try {
             juegoJPA.create(jue);
@@ -124,45 +128,42 @@ public class ControladoraPersistencia {
         return juego;
     }
     
-    
-    PersonaJpaController persoJPA = new PersonaJpaController ();
-    public void crearPersona (Persona perso) {
+    public void crearCliente (Cliente cli) {
         try {
-            persoJPA.create(perso);
+            clienteJPA.create(cli);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void eliminarPersona (Persona perso) {
+    public void eliminarCliente (Cliente cli) {
         try {
-            persoJPA.destroy(0);
+            clienteJPA.destroy(0);
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void editarPersona (Persona perso) {
+    public void editarCliente (Cliente cli) {
         try {
-            persoJPA.edit(perso);
+            clienteJPA.edit(cli);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public List <Persona> mostrarPersonas() {
+    public List <Cliente> mostrarClientes() {
         
-        List <Persona> listaPersonas = persoJPA.findPersonaEntities();
-        return listaPersonas;
+        List <Cliente> listaClientes = clienteJPA.findClienteEntities();
+        return listaClientes;
     }
     
-    public Persona buscarPersonas () {
+    public Persona buscarCliente () {
         
-        Persona persona = persoJPA.findPersona(0);
-        return persona;
+        Cliente cliente = clienteJPA.findCliente(0);
+        return cliente;
     }
     
     
-    TicketJpaController ticketJPA = new TicketJpaController();
     public void crearTicket (Ticket tick) {
         try {
             ticketJPA.create(tick);
@@ -199,7 +200,6 @@ public class ControladoraPersistencia {
     }
     
     
-    UsuarioJpaController usuJPA = new UsuarioJpaController();
     public void crearUsuario (Usuario usu) {
         try {
             usuJPA.create(usu);

@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/src/java/Servlets/Index.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/web/menu.jsp</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/web/clientes.jsp</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/src/java/Servlets/ClienteServlet.java</file>
+            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/src/conf/persistence.xml</file>
             <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/web/Registro.jsp</file>
             <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/src/java/Logica/Controladora.java</file>
-            <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/web/js/register.js</file>
             <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/web/index.jsp</file>
             <file>file:/C:/Users/Diego/Documents/NetBeansProjects/TPFinal_web/src/java/Servlets/RegistroServlet.java</file>
         </group>

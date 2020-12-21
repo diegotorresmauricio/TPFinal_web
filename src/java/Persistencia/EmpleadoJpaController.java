@@ -17,17 +17,16 @@ public class EmpleadoJpaController implements Serializable {
     public EmpleadoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+    
+    public EmpleadoJpaController() {
+        emf = Persistence.createEntityManagerFactory("TPFinal_webPU");
+    }
+    
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-
-    public EmpleadoJpaController() {
-        emf = Persistence.createEntityManagerFactory("TPfina_lPU");
-    }
-    
-    
 
     public void create(Empleado empleado) {
         EntityManager em = null;

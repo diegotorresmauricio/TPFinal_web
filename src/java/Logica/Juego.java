@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Juego implements Serializable {
@@ -17,10 +18,10 @@ public class Juego implements Serializable {
     
     @Basic
     String nombre_juego;
-    String usuario;
+    String cantClientes;
     String cantOperadores;
     
-    @ManyToMany
+    @ManyToOne
     Horario newHorario;
     
     public Juego() {
@@ -29,7 +30,7 @@ public class Juego implements Serializable {
     public Juego(int id_juego, String nombre_juego, String usuario, String cantOperadores, Horario newHorario) {
         this.id_juego = id_juego;
         this.nombre_juego = nombre_juego;
-        this.usuario = usuario;
+        this.cantClientes = usuario;
         this.cantOperadores = cantOperadores;
         this.newHorario = newHorario;
     }
@@ -50,12 +51,12 @@ public class Juego implements Serializable {
         this.nombre_juego = nombre_juego;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getCantClientes() {
+        return cantClientes;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setCantClientes(String cantClientes) {
+        this.cantClientes = cantClientes;
     }
 
     public String getCantOperadores() {

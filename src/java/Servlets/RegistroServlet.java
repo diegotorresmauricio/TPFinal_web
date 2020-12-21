@@ -1,6 +1,7 @@
 
 package Servlets;
 
+import Logica.Controladora;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -22,10 +23,21 @@ public class RegistroServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         
-        String nombre = request.getParameter("name");
-        String contra = request.getParameter("password");
+        String dni = request.getParameter("dni");
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String cargo = request.getParameter("cargo");
+        
+        String usuario = request.getParameter("usuario");
+        String contra = request.getParameter("pass");
+        
+        response.sendRedirect("index.jsp");
+        
+        Controladora control = new Controladora ();
+        control.crearUsuario(usuario,contra);
+        control.crearEmpleado(dni,nombre,apellido,cargo);
+        
     }
 
     
